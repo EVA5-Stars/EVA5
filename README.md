@@ -1,2 +1,8 @@
-# Week1: 12th July 2020
-Resources, Quiz and Assignment for Week 1 
+# **EVA5**
+
+## Group Members:
+- Gaurav Makkar
+- Mohit Bhandari
+- Suman Debnath
+- Sriram Iyengar
+
