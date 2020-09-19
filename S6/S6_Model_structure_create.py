@@ -44,9 +44,9 @@ class Net(nn.Module):
 
         # OUTPUT BLOCK
         if gbatnor:
-            self.convblock6 = nn.Sequential(nn.Conv2d(in_channels=32, out_channels=10, kernel_size=(1, 1), padding=0, bias=False),nn.ReLU(),GhostBatchNorm(10,2))
+            self.convblock6 = nn.Sequential(nn.Conv2d(in_channels=32, out_channels=10, kernel_size=(1, 1), padding=0, bias=False))
         else:
-            self.convblock6 = nn.Sequential(nn.Conv2d(in_channels=32, out_channels=10, kernel_size=(1, 1), padding=0, bias=False),nn.ReLU(),nn.BatchNorm2d(10))
+            self.convblock6 = nn.Sequential(nn.Conv2d(in_channels=32, out_channels=10, kernel_size=(1, 1), padding=0, bias=False))
             
         # output_size = 8        
         self.gap = nn.Sequential(nn.AvgPool2d(kernel_size=8)) # output_size = 1
