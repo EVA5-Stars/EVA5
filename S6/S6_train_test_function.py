@@ -4,8 +4,20 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
+# Loss train & test
+train_losses = []
+test_losses = []
 
-def train(model, device, train_loader, optimizer, epoch,train_losses,train_acc, l1_lambda=None,):
+# Accuracy train & test
+train_acc = []
+test_acc = []
+
+# Total Loss & Accuracy
+total_losses = []
+total_accuracies = []
+
+def train(model, device, train_loader, optimizer, epoch, l1_lambda=None):
+  model.train()
   pbar = tqdm(train_loader)
   correct = 0
   processed = 0
@@ -44,7 +56,7 @@ def train(model, device, train_loader, optimizer, epoch,train_losses,train_acc, 
     pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
     train_acc.append(100*correct/processed)
 
-def test(model, device, test_loader,test_losses,test_acc):
+def test(model, device, test_loader):
     model.eval()
     test_loss = 0
     correct = 0
@@ -64,4 +76,3 @@ def test(model, device, test_loader,test_losses,test_acc):
         100. * correct / len(test_loader.dataset)))
     
     test_acc.append(100. * correct / len(test_loader.dataset))
-  
