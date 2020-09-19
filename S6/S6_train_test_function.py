@@ -4,19 +4,10 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-# Loss train & test
-train_losses = []
-test_losses = []
-
-# Accuracy train & test
-train_acc = []
-test_acc = []
-
-# Total Loss & Accuracy
-total_losses = []
-total_accuracies = []
 
 def train(model, device, train_loader, optimizer, epoch, l1_lambda=None):
+  global train_losses
+  global train_acc
   model.train()
   pbar = tqdm(train_loader)
   correct = 0
@@ -57,6 +48,8 @@ def train(model, device, train_loader, optimizer, epoch, l1_lambda=None):
     train_acc.append(100*correct/processed)
 
 def test(model, device, test_loader):
+    global test_losses
+    global test_acc
     model.eval()
     test_loss = 0
     correct = 0
