@@ -22,7 +22,7 @@ def init_training(model, device, train_loader, epochs,train_losses,train_acc,tes
     
     for epoch in range(epochs):
 
-        train(model, device, train_loader, optimizer, epoch,train_losses,train_acc, l1_lambda,train_d)
+        train(model, device, train_loader, optimizer, epoch,train_losses,train_acc, l1_lambda)
 
         if step_lr:
             scheduler.step()
