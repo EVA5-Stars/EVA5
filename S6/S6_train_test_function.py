@@ -4,6 +4,13 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
+# Loss train & test
+train_losses = []
+test_losses = []
+
+# Accuracy train & test
+train_acc = []
+test_acc = []
 
 def train(model, device, train_loader, optimizer, epoch, l1_lambda=None):
   global train_losses
