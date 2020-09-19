@@ -1,7 +1,7 @@
 import torch.nn as nn
 import torch.nn.functional as F
 from torchsummary import summary
-from S6.BatchNorm_GhostBatchNorm import GhostBatchNorm
+from EVA5.S6.BatchNorm_GhostBatchNorm import GhostBatchNorm
 
 class Net(nn.Module):
     def __init__(self,gbatnor):

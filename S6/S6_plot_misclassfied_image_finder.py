@@ -2,11 +2,11 @@ import matplotlib.pyplot as plt
 import torch
 from torch.optim.lr_scheduler import StepLR
 import torch.optim as optim
-from S6.S6_data_loader import init_train_test_loader
+from EVA5.S6.S6_data_loader import init_train_test_loader
 train_loader, test_loader = init_train_test_loader()
 from torch.optim.lr_scheduler import StepLR
-from S6.S6_train_test_function import train
-from S6.S6_train_test_function import test
+from EVA5.S6.S6_train_test_function import train
+from EVA5.S6.S6_train_test_function import test
 
 def misclassified_image_finder(model, model_path, device, train_loader, image_num, msg):
     
