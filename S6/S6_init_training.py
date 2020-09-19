@@ -10,7 +10,7 @@ train_loader, test_loader = init_train_test_loader()
 from EVA5.S6.S6_train_test_function import train
 from EVA5.S6.S6_train_test_function import test
 
-def init_training(model, device, train_loader, epochs, step_lr=True, l1_lambda=None, l2_en=False,train_d,test_d):
+def init_training(model, device, train_loader, epochs,train_d,test_d, step_lr=True, l1_lambda=None, l2_en=False):
 
     if l2_en:
         optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9, dampening=0, weight_decay=1e-5, nesterov=False)

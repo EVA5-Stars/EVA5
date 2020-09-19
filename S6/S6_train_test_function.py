@@ -5,7 +5,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 
-def train(model, device, train_loader, optimizer, epoch, l1_lambda=None,train_d):
+def train(model, device, train_loader, optimizer, epoch,train_d, l1_lambda=None,):
   train_losses,train_acc=train_d
   model.train()
   pbar = tqdm(train_loader)
