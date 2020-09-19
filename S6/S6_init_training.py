@@ -28,4 +28,4 @@ def init_training(model, device, train_loader, epochs,train_losses,train_acc,tes
             scheduler.step()
 
         print('\n Epoch {}, lr {}'.format(epoch, optimizer.param_groups[0]['lr']))
-        test(model, device, test_loader,,test_losses,test_acc,)
+        test(model, device, test_loader,test_losses,test_acc,)
