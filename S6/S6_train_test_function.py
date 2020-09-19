@@ -16,7 +16,7 @@ test_acc = []
 total_losses = []
 total_accuracies = []
 
-def train(model, device, train_loader, optimizer, epoch, l1_lambda=None):
+def train(model, device, train_loader, optimizer, epoch,train_losses,train_acc, l1_lambda=None):
   model.train()
   pbar = tqdm(train_loader)
   correct = 0
@@ -56,7 +56,7 @@ def train(model, device, train_loader, optimizer, epoch, l1_lambda=None):
     pbar.set_description(desc= f'Loss={loss.item()} Batch_id={batch_idx} Accuracy={100*correct/processed:0.2f}')
     train_acc.append(100*correct/processed)
 
-def test(model, device, test_loader):
+def test(model, device, test_loader,test_losses,test_acc):
     model.eval()
     test_loss = 0
     correct = 0
