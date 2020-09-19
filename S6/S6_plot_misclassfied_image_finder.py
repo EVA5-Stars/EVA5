@@ -26,7 +26,7 @@ def misclassified_image_finder(model, model_path, device, train_loader, image_nu
           output = model(data)
           pred = output.argmax(dim=1, keepdim=True) 
 
-          for a in range(256):
+          for a in range(469):
               if(pred[a]!=target[a]):
                   
                   plt.subplot(5,5,_i+1)
