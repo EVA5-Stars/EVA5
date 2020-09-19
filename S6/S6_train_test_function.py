@@ -6,7 +6,8 @@ import torch.optim as optim
 
 
 def train(model, device, train_loader, optimizer, epoch,train_d, l1_lambda=None,):
-  train_losses,train_acc=train_d[0],train_d[1]
+  train_losses=train_d[0]
+  train_acc=train_d[1]
   model.train()
   pbar = tqdm(train_loader)
   correct = 0
@@ -48,7 +49,8 @@ def train(model, device, train_loader, optimizer, epoch,train_d, l1_lambda=None,
     test_d=train_losses,train_acc
 
 def test(model, device, test_loader,test_d):
-    test_losses,test_acc=test_d[0],test_d[1]
+    test_losses=test_d[0]
+    test_acc=test_d[1]
     model.eval()
     test_loss = 0
     correct = 0
